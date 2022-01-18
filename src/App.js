@@ -5,7 +5,7 @@ export default function App() {
   const { openModal } = useModals();
 
   const handleClick = () => {
-    openModal(modals.myModal, {
+    openModal(modals.ExampleModal, {
       onSubmit: () => {
         console.log('비지니스 로직 처리...');
       },
