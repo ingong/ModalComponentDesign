@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import useModals from './useModals';
+import { modals } from './Modals';
 
-function App() {
+export default function App() {
+  const { openModal } = useModals();
+
+  const handleClick = () => {
+    openModal(modals.myModal, {
+      onSubmit: () => {
+        console.log('비지니스 로직 처리...');
+      },
+    });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={handleClick}>모달열기</button>
     </div>
   );
 }
-
-export default App;
